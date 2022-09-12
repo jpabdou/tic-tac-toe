@@ -14,6 +14,6 @@
 
 ## Set Up
 
-1. Clone repo and execute `npm install` to install deps.
+1. Clone repo, cd into the directory and execute `npm install` to install deps.
 2. Launch the project by executing `npm run start`.
 3. Visit your app by navigating Chrome/Firefox to `http://localhost:3000`.
