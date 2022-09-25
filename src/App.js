@@ -8,13 +8,11 @@ import Game from "./Components/Game"
 
 function App() {
   // 1) board state ->  nested array 
-  const [board, setBoard] = useState([0, 0 , 0, 0, 0, 0, 0, 0,0])
-  const [turn, setTurn] = useState(1)
-  const [player, setPlayer] = useState(0)
+
 
   return (
     <div>
-      <Game player = {player} setPlayer = {setPlayer} board={board} setBoard={setBoard} turn ={turn} setTurn = {setTurn}/>
+      <Game />
     </div>
   );
 }

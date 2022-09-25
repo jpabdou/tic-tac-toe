@@ -12,9 +12,9 @@ function winner(board) {
     ]
     for (let i = 0; i< wins.length; i++) {
         const [a,b,c] = wins[i];
-        if (board[a] && board[a] === board[b] && board[a] === board[c]) {
-            alert(`${board[a]} is THE WINNER`)
-        }
+        if (board[a] != " " && board[a] === board[b] && board[a] === board[c]) {
+            return true
+        } 
     }
     return null;
 }

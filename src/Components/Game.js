@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import Square from "./Square"
 
+import winner from "./Winner"
 const style = {
     borderRadius: "25%",
     display: "grid",
@@ -10,6 +11,8 @@ const style = {
 
 
 function Game(props) {
+    const [board, setBoard] = useState([" ", " " , " ", " ", " ", " ", " ", " "," "])
+    const [player, setPlayer] = useState("X")
     
     console.log(props)
     const gameState = []
@@ -18,12 +21,23 @@ function Game(props) {
     
     return (
         <div style={style}>
-        {props.board.map((element, idx) => 
-         <Square key={idx} gameState={gameState} pos={idx} player = {props.player} setPlayer = {props.setPlayer} turn ={props.turn} setTurn = {props.setTurn} />
+        {board.map((element, idx) => 
+         <Square key={idx} value={element} onClick={()=>{
+            if (board[idx] === " ") {
+            board[idx] = player
+            setBoard([...board])
+            if (winner(board)) {
+                alert(`${player} HAS WON`)
+            } 
+            setPlayer(player === "X" ? "O" : "X")
+        } else {
+                alert("This square is taken")
+            }
+         }} />
          )}
         </div>
         
     )
 }
 
-export default Game
+export default Game;
